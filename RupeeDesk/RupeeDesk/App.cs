@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RupeeDesk.Views.Lannister;
+using RupeeDesk.Views.Stark;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +14,7 @@ namespace RupeeDesk
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            XAlign = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+            MainPage = new NavigationPage(new AddWalletProviders());
         }
 
         protected override void OnStart()

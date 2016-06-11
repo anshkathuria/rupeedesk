@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RupeeDesk.Views.Stark.Component"
+             x:Class="RupeeDesk.Views.Stark.DeliveryList">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:TypeArguments="Color" Android="#F5F5F5" iOS="#EFEFF4" WinPhone="#EFEFF4" x:Key="WindowBackgroundTable"/>
+      <OnPlatform x:TypeArguments="Thickness" Android="8,16" iOS="0,0,0,16" WinPhone="0,0,0,16" x:Key="CardPadding"/>
+      <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="0" WinPhone="0" x:Key="CardSpacing"/>
+      <Thickness x:Key="StandardPadding">16</Thickness>
+      <Color x:Key="ListSeparator">#C8C7CC</Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ScrollView
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="FillAndExpand">
+    <StackLayout Spacing="{StaticResource CardSpacing}"
+              Padding="{StaticResource CardPadding}">
+      <local:CardView>
+        <!--Tweets-->
+        <StackLayout Spacing="0">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="34"/>
+            </Grid.ColumnDefinitions>
+            <local:LabelSection Text="Delivery Locations"/>
+          </Grid>
+          <local:HeaderDivider/>
+          <!--<StackLayout IsVisible="{Binding LoadingSocial}"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                        BackgroundColor="White"
+                        Padding="{StaticResource StandardPadding}">
+            --><!--<ActivityIndicator IsRunning="{Binding LoadingSocial}">
+              <ActivityIndicator.Color>
+                <OnPlatform x:TypeArguments="Color" Android="{StaticResource Accent}"/>
+              </ActivityIndicator.Color>
+            </ActivityIndicator>--><!--
+            <Label Text="Loading Social Feed..."
+                   HorizontalOptions="Center"
+                   Style="{DynamicResource EvolveListItemTextStyle}"/>
+          </StackLayout>
+          <StackLayout IsVisible="{Binding SocialError}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                         BackgroundColor="White"
+                         Padding="{StaticResource StandardPadding}">
+
+            <Label Text="Unable to load social feed"
+                   HorizontalOptions="Center"
+                   Style="{DynamicResource EvolveListItemTextStyle}"/>
+          </StackLayout>-->
+          <local:NonScrollableListView
+              x:Name="ListViewSocial"
+              ItemsSource="{Binding DeliveryList}">
+            <local:NonScrollableListView.SeparatorColor>
+              <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" WinPhone="{StaticResource ListSeparator}"/>
+            </local:NonScrollableListView.SeparatorColor>
+            <local:NonScrollableListView.RowHeight>
+              <OnPlatform x:TypeArguments="x:Int32" Android="145" iOS="140" WinPhone="155"/>
+            </local:NonScrollableListView.RowHeight>
+            <local:NonScrollableListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell >
+                  <local:DeliveryCell/>
+                </ViewCell>
+              </DataTemplate>
+            </local:NonScrollableListView.ItemTemplate>
+          </local:NonScrollableListView>
+          <local:FooterDivider/>
+        </StackLayout>
+      </local:CardView>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

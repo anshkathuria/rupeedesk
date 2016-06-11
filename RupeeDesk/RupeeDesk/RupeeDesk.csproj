@@ -60,10 +60,37 @@
     <Compile Include="FireSharp\Response\SetResponse.cs" />
     <Compile Include="Interfaces\IBaseModel.cs" />
     <Compile Include="Interfaces\IRestClient.cs" />
+    <Compile Include="Models\Stark\Delivery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FireSharpClient.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\PropertyNotifier.cs" />
+    <Compile Include="Utilities\FavoriteImage.cs" />
     <Compile Include="Utilities\ObservableDictionary.cs" />
+    <Compile Include="ViewModels\DeliveryListViewModel.cs" />
+    <Compile Include="Views\Lannister\AddWalletProviders.xaml.cs">
+      <DependentUpon>AddWalletProviders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\Component\CardView.cs" />
+    <Compile Include="Views\Stark\Component\DeliveryCell.xaml.cs">
+      <DependentUpon>DeliveryCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\Component\FooterDivider.xaml.cs">
+      <DependentUpon>FooterDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\Component\HeaderDivider.xaml.cs">
+      <DependentUpon>HeaderDivider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\Component\LabelSection.xaml.cs">
+      <DependentUpon>LabelSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\Component\NonScrollableListView.cs" />
+    <Compile Include="Views\Stark\DeliveryList.xaml.cs">
+      <DependentUpon>DeliveryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stark\OrderDetail.xaml.cs">
+      <DependentUpon>OrderDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -88,9 +115,46 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <EmbeddedResource Include="Views\Stark\Component\HeaderDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Stark\DeliveryList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Stark\Component\LabelSection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Stark\Component\FooterDivider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Stark\Component\DeliveryCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Stark\OrderDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Lannister\AddWalletProviders.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
