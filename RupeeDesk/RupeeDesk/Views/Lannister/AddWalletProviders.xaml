@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RupeeDesk.Utilities"
+             x:Class="RupeeDesk.Views.Lannister.AddWalletProviders">
+  <StackLayout>
+    <!--<TableView Intent="Settings" HasUnevenRows="true">
+      <TableSection Title="Categories" x:Name="TableSectionCategories">
+        <ViewCell>
+          <ViewCell.View>
+            <Grid Padding="16,6,16,6" ColumnSpacing="16">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <Label Grid.Column="0"
+                     Text="Paytm"
+                     VerticalTextAlignment="Center"
+                     HorizontalOptions="StartAndExpand"/>
+              <controls:FavoriteImage Grid.Column="1" x:Name="IsTracked">
+                <Image.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="AddProvider"/>
+                </Image.GestureRecognizers>
+              </controls:FavoriteImage>
+
+            </Grid>
+          </ViewCell.View>
+        </ViewCell>
+      </TableSection>
+    </TableView>-->
+    <StackLayout Orientation="Horizontal" Padding="10">
+      <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand"  Text="Paytm" />
+      <controls:FavoriteImage HorizontalOptions="EndAndExpand" Source="ic_check_box_outline" x:Name="IsTracked">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="AddProvider"/>
+        </Image.GestureRecognizers>
+      </controls:FavoriteImage>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
