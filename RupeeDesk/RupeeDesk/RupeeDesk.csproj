@@ -91,6 +91,9 @@
     <Compile Include="Views\Stark\OrderDetail.xaml.cs">
       <DependentUpon>OrderDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Lannister\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
@@ -114,6 +117,9 @@
     <EmbeddedResource Include="Views\Stark\Component\HeaderDivider.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Lannister\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

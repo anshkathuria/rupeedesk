@@ -14,7 +14,7 @@ namespace RupeeDesk
         public App()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new AddWalletProviders());
+			MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()
