@@ -50,10 +50,18 @@ namespace RupeeDesk.Views.Stark
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public void insertRandomDelivery()
+        public async void insertRandomDelivery()
         {
             Payment p = new Payment();
-            p.Address = RandomString(10) + RandomString(10) + RandomString(10);
+            p.Address = "something 1";
+            p.Name = "new 1";
+            p.MerchantName = "KFC";
+            p.Amount = 360;
+            p.OrderId = "#123";
+            p.PaymentType = "ONLINE";
+            p.Status = "PENDING";
+            p.PhoneNumber = "8217832121";
+            await fsClient.Push<Payment>("payments", p);
             //+p.Amount = Convert.ToInt32(Ran)
         }
 
