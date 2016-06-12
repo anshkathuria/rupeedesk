@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RupeeDesk.Login">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="CenterAndExpand">
-			<StackLayout WidthRequest="400">
-				<Entry HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Placeholder="Mobile Number" />
+      <StackLayout Padding="5,5,15,5">
+        <Image HeightRequest="140" WidthRequest="140" HorizontalOptions="Center" VerticalOptions="Center" Source="logo" />
+      </StackLayout>
+			<StackLayout WidthRequest="200" HorizontalOptions="Center" Spacing="15">
+				<Entry HorizontalOptions="FillAndExpand" Keyboard="Telephone" HorizontalTextAlignment="Center" FontSize="Large" x:Name="phNo" Placeholder="Mobile Number" />
+        <Button Clicked="SendOtpClicked" HorizontalOptions="FillAndExpand" Text="Send OTP"  />
 			</StackLayout>
-			<Button HorizontalOptions="CenterAndExpand" Text="OK" TextColor="Blue" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

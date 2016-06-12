@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RupeeDesk.Views.Lannister.VerifyOtp">
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="CenterAndExpand">
+      <StackLayout Padding="5,5,15,5">
+        <Image HeightRequest="140" WidthRequest="140" HorizontalOptions="Center" VerticalOptions="Center" Source="logo" />
+      </StackLayout>
+      <StackLayout WidthRequest="250" HorizontalOptions="Center" Spacing="15">
+        <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" HorizontalTextAlignment="Center" FontSize="Large" Placeholder="One Time Password" />
+        <Button Clicked="LoginClicked" HorizontalOptions="FillAndExpand" Text="Login"  />
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

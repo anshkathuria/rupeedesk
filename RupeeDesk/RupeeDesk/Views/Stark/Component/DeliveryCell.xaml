@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RupeeDesk.Views.Stark.Component.DeliveryCell">
+             x:Class="RupeeDesk.Views.Stark.Component.DeliveryCell"
+             BackgroundColor="#03A9F4">
   <ContentView.Resources>
     <ResourceDictionary>
       <x:Double x:Key="MediumSpacing">8</x:Double>
@@ -19,12 +20,9 @@
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
       <StackLayout Padding="0"
-                   Spacing="4" StyleId="TweetItem">
-        <Label Text="{Binding Name}"
+                   Spacing="4">
+        <Label Text="{Binding OrderID}"
                LineBreakMode="NoWrap"/>
-
-        <Label Text="{Binding Name}"
-               LineBreakMode="WordWrap"/>
 
       </StackLayout>
 
@@ -34,12 +32,12 @@
           <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label
-             Text="Binding SubtitleDisplay"
+             Text="{Binding Name}"
              LineBreakMode="NoWrap"/>
 
         <Label Grid.ColumnSpan="2"
              HorizontalOptions="End"
-             Text="Binding DateDisplay"
+             Text="{Binding Phonenumber}"
              LineBreakMode="NoWrap"/>
       </Grid>
 

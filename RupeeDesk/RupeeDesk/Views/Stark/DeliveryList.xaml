@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RupeeDesk.Views.Stark.Component"
+             Title="Delivery Locations"
              x:Class="RupeeDesk.Views.Stark.DeliveryList">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -20,14 +21,14 @@
       <local:CardView>
         <!--Tweets-->
         <StackLayout Spacing="0">
-          <Grid>
+          <!--<Grid>
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
               <ColumnDefinition Width="34"/>
             </Grid.ColumnDefinitions>
             <local:LabelSection Text="Delivery Locations"/>
           </Grid>
-          <local:HeaderDivider/>
+          <local:HeaderDivider/>-->
           <!--<StackLayout IsVisible="{Binding LoadingSocial}"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="Center"
@@ -54,12 +55,13 @@
           </StackLayout>-->
           <local:NonScrollableListView
               x:Name="ListViewSocial"
+              ItemSelected="OnDeliveryTapped"
               ItemsSource="{Binding DeliveryList}">
             <local:NonScrollableListView.SeparatorColor>
               <OnPlatform x:TypeArguments="Color" iOS="{StaticResource ListSeparator}" WinPhone="{StaticResource ListSeparator}"/>
             </local:NonScrollableListView.SeparatorColor>
             <local:NonScrollableListView.RowHeight>
-              <OnPlatform x:TypeArguments="x:Int32" Android="145" iOS="140" WinPhone="155"/>
+              <OnPlatform x:TypeArguments="x:Int32" Android="115" iOS="140" WinPhone="155"/>
             </local:NonScrollableListView.RowHeight>
             <local:NonScrollableListView.ItemTemplate>
               <DataTemplate>

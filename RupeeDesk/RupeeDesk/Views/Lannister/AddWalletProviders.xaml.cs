@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RupeeDesk.Data;
+using RupeeDesk.Models.Lannister;
+using RupeeDesk.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,22 +13,31 @@ namespace RupeeDesk.Views.Lannister
 {
     public partial class AddWalletProviders : ContentPage
     {
-        bool IsFavorite;
+        public AddWalletProviderViewModel _vm;
         public AddWalletProviders()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            _vm = new AddWalletProviderViewModel();
+            BindingContext = _vm;
         }
-        public void AddProvider(object sender,EventArgs e)
+
+        public void NullSelectItem(object sender, SelectedItemChangedEventArgs e)
         {
-            IsFavorite = !IsFavorite;
-            if (IsFavorite)
+            (sender as ListView).SelectedItem = null;
+        }
+
+        // TODO : on NEXT Click transfer generate random money to these wallet and send to firebase.
+
+        public void NextClicked(object sender, EventArgs e)
+        {
+            foreach (var item in _vm.WalletProviders)
             {
-                IsTracked.Source = ImageSource.FromFile("ic_check_box");
+                if(item.Used)
+                    item.Amount = new Random().Next(0, 100);
             }
-            else
-            {
-                IsTracked.Source = ImageSource.FromFile("ic_check_box_outline");
-            }
+            GlobalData.USER_WALLETS = _vm.WalletProviders.FindAll(wallet => wallet.Used == true);
+            this.Navigation.PushAsync(new AddCard());
         }
     }
 }

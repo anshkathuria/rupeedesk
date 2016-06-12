@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RupeeDesk.Views.Stark.Component"
+             Title="Order Details"
              x:Class="RupeeDesk.Views.Stark.OrderDetail">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -13,21 +14,21 @@
               Padding="{StaticResource CardPadding}">
     <local:CardView>
       <!--Tweets-->
-      <StackLayout Spacing="0">
-        <Grid>
+      <StackLayout Spacing="20">
+        <!--<Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="34"/>
           </Grid.ColumnDefinitions>
           <local:LabelSection Text="Order Details"/>
         </Grid>
-        <local:HeaderDivider/>
-        <Label Text="Address" />
-        <Entry Text="8019608326" />
+        <local:HeaderDivider/>-->
+        <Label Text="{Binding Name}" />
+        <Entry Text="{Binding Phonenumber}" />
         <Button Text="Send OTP" Clicked="OnOTPClicked"/>
         <StackLayout Spacing="20">
           <Entry x:Name="VerifyOTPEntry" Placeholder="Please Enter The OTP" IsVisible="False"/>
-          <Button x:Name="VerifyOTPButton" Text="Send OTP" Clicked="OnVerifyOTPClicked" IsVisible="False"/>
+          <Button x:Name="VerifyOTPButton" Text="Verify OTP" Clicked="OnVerifyOTPClicked" IsVisible="False"/>
         </StackLayout>
       </StackLayout>
     </local:CardView>

@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics.Drawables;
+using Android.Graphics;
 
 namespace RupeeDesk.Droid
 {
@@ -18,6 +20,9 @@ namespace RupeeDesk.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            var color = new ColorDrawable(Color.Transparent);
+            ActionBar.SetIcon(color);
         }
     }
 }

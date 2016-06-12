@@ -8,6 +8,8 @@ namespace RupeeDesk.Models.Stark
 {
     public class Delivery
     {
+        public string OrderID { get; set; }
         public string Name { get; set; }
+        public string Phonenumber { get; set; }
     }
 }

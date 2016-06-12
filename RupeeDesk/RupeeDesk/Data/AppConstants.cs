@@ -8,7 +8,7 @@ namespace RupeeDesk.Constants
 {
     public class AppConstants
     {
-        public static string FIREBASE_AUTH = "3aUHYw73tkGbVSbE6DxeWXXNIJ8VHEI5cwRy0L7c";
-        public static string FIREBASE_URL = "https://fybrfb.firebaseio.com/";
+        public static string FIREBASE_AUTH = "8CoraxkrXy4KXzAos0bYjfenu6FGeUMFRaULHgwA";
+        public static string FIREBASE_URL = "https://rupeedesk.firebaseio.com/";
     }
 }

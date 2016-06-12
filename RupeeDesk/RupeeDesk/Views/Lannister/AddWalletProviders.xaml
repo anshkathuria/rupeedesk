@@ -1,40 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:RupeeDesk.Utilities"
+             xmlns:components="clr-namespace:RupeeDesk.Components"
              x:Class="RupeeDesk.Views.Lannister.AddWalletProviders">
   <StackLayout>
-    <!--<TableView Intent="Settings" HasUnevenRows="true">
-      <TableSection Title="Categories" x:Name="TableSectionCategories">
-        <ViewCell>
-          <ViewCell.View>
-            <Grid Padding="16,6,16,6" ColumnSpacing="16">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-              </Grid.ColumnDefinitions>
-              <Label Grid.Column="0"
-                     Text="Paytm"
-                     VerticalTextAlignment="Center"
-                     HorizontalOptions="StartAndExpand"/>
-              <controls:FavoriteImage Grid.Column="1" x:Name="IsTracked">
-                <Image.GestureRecognizers>
-                  <TapGestureRecognizer Tapped="AddProvider"/>
-                </Image.GestureRecognizers>
-              </controls:FavoriteImage>
-
-            </Grid>
-          </ViewCell.View>
-        </ViewCell>
-      </TableSection>
-    </TableView>-->
-    <StackLayout Orientation="Horizontal" Padding="10">
-      <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand"  Text="Paytm" />
-      <controls:FavoriteImage HorizontalOptions="EndAndExpand" Source="ic_check_box_outline" x:Name="IsTracked">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Tapped="AddProvider"/>
-        </Image.GestureRecognizers>
-      </controls:FavoriteImage>
-    </StackLayout>
+    <Grid BackgroundColor="#1E1E1E" Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <StackLayout Grid.Row="0" Grid.Column="0" Padding="10"  VerticalOptions="Center"  >
+        <Label HorizontalOptions="Start" FontSize="Large"  Text="Add Accounts" />
+      </StackLayout>
+      <Button Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" FontSize="Medium" Text="Next" Clicked="NextClicked" />
+    </Grid>
+    
+    <ListView x:Name="providersList" HasUnevenRows="True" ItemSelected="NullSelectItem" ItemsSource="{Binding WalletProviders}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <components:WalletProvider/>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    
   </StackLayout>
 </ContentPage>

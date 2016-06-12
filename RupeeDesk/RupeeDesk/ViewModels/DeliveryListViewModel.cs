@@ -32,15 +32,21 @@ namespace RupeeDesk.ViewModels
             {
                 new Delivery
                 {
-                    Name = "1"
+                    OrderID = "#110",
+                    Name = "Abhishek",
+                    Phonenumber = "8686042849"
                 },
                 new Delivery
                 {
-                    Name = "2"
+                    OrderID = "#111",
+                    Name = "Gandharv",
+                    Phonenumber = "8019608326"
                 },
                 new Delivery
                 {
-                    Name = "3"
+                    OrderID = "#112",
+                    Name = "Gaurav",
+                    Phonenumber = "9963899305"
                 }
             };
         }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RupeeDesk.Views.Lannister.AddCard">
+  <StackLayout>
+    <Grid BackgroundColor="#1E1E1E" Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <StackLayout Grid.Row="0" Grid.Column="0" Padding="10"  VerticalOptions="Center"  >
+        <Label HorizontalOptions="Start" FontSize="Large"  Text="Add Card" />
+      </StackLayout>
+      <Button Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" FontSize="Medium" Text="Save" Clicked="SaveClicked" />
+    </Grid>
+
+    <!-- TODO: Add Image of Card -->
+    <StackLayout Spacing="15" Padding="15">
+      <Entry Placeholder="XXXX XXXX XXXX XXXX" FontSize="Large" HorizontalOptions="Start" Keyboard="Numeric" x:Name="cardNo" />
+      <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="5">
+        <Entry Placeholder="MM" FontSize="Large" Keyboard="Numeric" x:Name="mm" />
+        <Entry Placeholder="YYYY" FontSize="Large" Keyboard="Numeric" x:Name="yyyy" />
+      </StackLayout>
+      <Entry Placeholder="CVV" Keyboard="Numeric" HorizontalOptions="Start" FontSize="Large" IsPassword="True" />
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

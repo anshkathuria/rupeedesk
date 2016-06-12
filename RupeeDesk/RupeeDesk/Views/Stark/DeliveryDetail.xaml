@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RupeeDesk.Views.Stark.DeliveryDetail"
+             Title="{Binding OrderId}">
+  <StackLayout Padding="20" Spacing="10">
+    <StackLayout Orientation="Horizontal">
+      <StackLayout>
+        <Label Text="{Binding Name}" FontSize="Large" />
+        <StackLayout HorizontalOptions="Start" WidthRequest="200">
+          <Label Text="{Binding Address}" FontSize="Medium" LineBreakMode="WordWrap" />
+        </StackLayout>
+        <Label Text="{Binding PhoneNumber}" FontSize="Medium" />
+      </StackLayout>
+      <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="{Binding Amount}" FontSize="Large" />
+      </StackLayout>
+    </StackLayout>
+    
+    
+
+    <StackLayout>
+      <Grid  HorizontalOptions="FillAndExpand" Padding="1" ColumnSpacing="0">
+        <Grid.RowDefinitions >
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button1" HorizontalOptions="FillAndExpand" Text="Online" TextColor="White" Grid.Row="0" Grid.Column="0" BorderRadius="0" Clicked="click1"/>
+        <Button x:Name="button2" HorizontalOptions="FillAndExpand" Text="Cash" TextColor="White" Grid.Row="0" Grid.Column="1" BorderRadius="0" Clicked="click2"/>
+      </Grid>
+      <StackLayout Padding="0" x:Name="TabbedView">
+        <ContentView x:Name="contentview1" >
+          <StackLayout VerticalOptions="FillAndExpand">
+            <Entry Text="{Binding PhoneNumber}" FontSize="Medium"/>
+            <Button Text="Send OTP" Clicked="OnOTPClicked" FontSize="Medium"/>
+            <StackLayout Spacing="20">
+              <Entry x:Name="VerifyOTPEntry" FontSize="Medium" Placeholder="Please Enter The OTP" IsVisible="False"/>
+              <Button x:Name="VerifyOTPButton" FontSize="Medium" Text="Verify OTP" Clicked="OnVerifyOTPClicked" IsVisible="False"/>
+            </StackLayout>
+          </StackLayout>
+        </ContentView>
+        <ContentView x:Name="contentview2">
+          <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+            <Button x:Name="MarkAsCOD" Text="Cash Payment" Clicked="OnCOD" />
+          </StackLayout>
+        </ContentView>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

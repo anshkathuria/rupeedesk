@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RupeeDesk.Models.Stark;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,14 @@ namespace RupeeDesk.Views.Stark
 {
     public partial class OrderDetail : ContentPage
     {
-        public OrderDetail()
+        public OrderDetail(Delivery d)
         {
             InitializeComponent();
+            BindingContext = d;
         }
         public void OnOTPClicked(object sender,EventArgs e)
         {
-            VerifyOTPEntry.IsVisible = true;
-            VerifyOTPButton.IsVisible = true;
+           
         }
         public void OnVerifyOTPClicked(object sender, EventArgs e)
         {
